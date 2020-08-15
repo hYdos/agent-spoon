@@ -4,9 +4,8 @@
   "package": "net.fabricmc.example.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-    "ExampleMixin"
+    "MinecraftDedicatedServerMixin",
+    "ServerNetworkIoAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
