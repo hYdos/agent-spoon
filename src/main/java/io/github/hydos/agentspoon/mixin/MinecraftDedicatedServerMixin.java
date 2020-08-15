@@ -1,9 +1,10 @@
-package net.fabricmc.example.mixin;
+package io.github.hydos.agentspoon.mixin;
 
 import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.datafixers.DataFixer;
-import net.fabricmc.example.ExampleMod;
+import io.github.hydos.agentspoon.AgentSpoon;
+import io.github.hydos.agentspoon.conversion.JavaGameTranslator;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ServerResourceManager;
 import net.minecraft.server.MinecraftServer;
@@ -29,5 +30,7 @@ public abstract class MinecraftDedicatedServerMixin extends MinecraftServer {
 
     @Inject(method = "setupServer", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/ServerNetworkIo;bind(Ljava/net/InetAddress;I)V", shift = At.Shift.AFTER))
     public void bind(CallbackInfoReturnable<Boolean> cir) {
+        AgentSpoon.javaGameTranslator = new JavaGameTranslator(this);
+        AgentSpoon.openBedrockChannel();
     }
 }

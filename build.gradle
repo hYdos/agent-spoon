@@ -22,6 +22,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	implementation("org.bitbucket.b_c:jose4j:0.6.3")
 	implementation("com.nukkitx.protocol:bedrock-v409:2.6.0-SNAPSHOT")
 }
 

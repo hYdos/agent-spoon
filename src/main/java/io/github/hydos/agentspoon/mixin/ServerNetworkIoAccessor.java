@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package io.github.hydos.agentspoon.mixin;
 
 import io.netty.channel.ChannelFuture;
 import net.minecraft.server.ServerNetworkIo;
